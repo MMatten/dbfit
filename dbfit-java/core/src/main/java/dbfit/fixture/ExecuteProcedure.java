@@ -4,7 +4,6 @@ import dbfit.api.DBEnvironment;
 import dbfit.api.DbEnvironmentFactory;
 import dbfit.api.DbObject;
 import dbfit.api.DbStoredProcedure;
-import dbfit.util.ExpectedBehaviour;
 
 import java.sql.SQLException;
 

@@ -74,12 +74,12 @@ System.out.println("In DbObjectExecutionFixture.getActualErrorCode");
                     try {
                         preparedStatement.run();
                         if (getExpectedBehaviour() != ExpectedBehaviour.NO_EXCEPTION) {
-                        	throw new SQLException("Executed procedure was expected raise an exception");
-                        }                      	
-                	} catch (SQLException e) {
+                            throw new SQLException("Executed procedure was expected raise an exception");
+                        }
+                    } catch (SQLException e) {
 System.out.println("In DbObjectExecutionFixture: doRows: e.getMessage(): " + e.getMessage());
-                		if (getExpectedBehaviour() != ExpectedBehaviour.ANY_EXCEPTION) {
-                		    String realError = getActualErrorCode(e);
+                        if (getExpectedBehaviour() != ExpectedBehaviour.ANY_EXCEPTION) {
+                            String realError = getActualErrorCode(e);
                             if (!realError.equals(getExpectedErrorCode())) {
                                 throw new SQLException("Executed procedure was expected raise an exception with error code " +
                                 getExpectedErrorCode() + " but got error code " + realError);
