@@ -100,6 +100,26 @@ create or replace package body RCLOBTest as
 end;
 /
 
+create or replace procedure raise_error_with_params(name in varchar2, strlength out number) as
+begin
+    if (name = 'xx') then
+        raise_application_error(-20001, 'test exception');
+    end if;
+    strlength := LENGTH(name);
+end;
+/
+
+create or replace procedure raise_error_no_params as
+begin
+    raise_application_error(-20001, 'test exception');
+end;
+/
+
+set define on
+
+connect / as sysdba
+
+set verify off
 
 create user dfsyntest identified by dfsyntest default tablespace &&tbs_data;
 
