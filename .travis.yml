@@ -17,6 +17,7 @@ before_script:
 script: "./gradlew clean travisbuild"
 jdk:
 - oraclejdk7
+- openjdk7
 - oraclejdk8
 after_success:
 - "./gradlew bundle"
