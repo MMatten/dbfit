@@ -1,8 +1,5 @@
 sudo: required
 
-services:
-  - docker
-
 language: java
 before_install:
   - "./gradlew -version"
@@ -11,8 +8,6 @@ script: "./gradlew clean travisbuild"
 jdk:
 - openjdk7
 - oraclejdk8
-after_success:
-- "./gradlew bundle"
 addons:
   artifacts:
     paths:
