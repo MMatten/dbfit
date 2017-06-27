@@ -6,8 +6,7 @@ sudo: required
 language: java
 before_install:
   - "sudo apt-get remove openjdk-7-jdk"
-  - "sudo add-apt-repository ppa:ubuntu-security-proposed/ppa"
-  - "sudo apt-get install openjdk-7-jdk=7u121-2.6.9-0ubuntu0.14.04.2"
+  - "sudo apt-get install openjdk-7-jdk"
   - "./gradlew -version"
 install: "./gradlew assemble"
 script: "./gradlew clean travisbuild"
