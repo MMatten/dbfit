@@ -5,6 +5,7 @@ sudo: required
 
 language: java
 before_install:
+  - "apt-get --reinstall openjdk-7-jdk"
   - "./gradlew -version"
 install: "./gradlew assemble"
 script: "./gradlew clean travisbuild"
